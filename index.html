@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LoKate</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      overflow: hidden;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    nav {
+      background-color: rgb(32, 43, 54);
+      padding: 1rem;
+      margin: 0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      position: relative;
+      z-index: 1000;
+    }
+
+    nav h1 {
+      padding: 0;
+      margin: 0;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 65vh;
+      display: flex;
+      flex-direction: row;
+    }
+
+    .side-bar {
+      margin: 0;
+      padding: 1rem;
+      width: 20%;
+      height: 100%;
+      background: linear-gradient(rgba(40, 55, 70, 0.897), rgb(32, 43, 54));
+      color: white;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      position: relative;
+      z-index: 900;
+    }
+
+    .map {
+      margin: 0;
+      padding: 0;
+      width: 80%;
+      height: 100%;
+      background-color: #f0f0f0;
+    }
+
+    #map-container {
+      width: 100%;
+      height: 100%;
+    }
+
+    .bottom-bar {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: 25vh;
+      background-color: #7a8186;
+    }
+
+    .terminal {
+      background-color: rgb(32, 43, 54);
+      width: 33.3333%;
+      border-radius: 10px 10px 0 0;
+      display: flex;
+      flex-direction: column;
+      row-gap: 5px;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      position: relative;
+      z-index: 950;
+      color: white;
+    }
+
+    .terminal h1 {
+      padding: 0%;
+      margin: 0%;
+    }
+
+    .terminal p {
+      padding: 2px;
+      margin: 0%;
+      background-color: rgba(41, 41, 75, 0.479);
+      border-radius: 5px;
+    }
+
+    .distance {
+      background-color: #c4cbd1;
+      width: 33.33%;
+      border-radius: 10px 10px 0 0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      position: relative;
+      z-index: 960;
+      color: rgb(0, 0, 0);
+      text-align: center;
+    }
+
+    .distance form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      row-gap: 5px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .distance input {
+      width: 80%;
+      height: 20px;
+      border: 1px solid rgba(41, 41, 75, 0.479);
+      border-radius: 5px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9fbfdd3;
+    }
+
+    .distance button {
+      width: 80%;
+      height: 30px;
+      border: none;
+      border-radius: 5px;
+      background: linear-gradient(rgb(24, 143, 255), rgb(17, 84, 228));
+      color: white;
+    }
+
+    .distance h2 {
+      margin: 0%;
+      margin-top: 5px;
+      padding: 5px;
+      font-size: 20px;
+    }
+
+    .calculate-route {
+      background-color: #c3cad0;
+      width: 33.33%;
+      border-radius: 10px 10px 0 0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      position: relative;
+      z-index: 950;
+      color: rgb(0, 0, 0);
+      text-align: center;
+    }
+
+    .calculate-route h2 {
+      margin: 0%;
+      margin-top: 5px;
+      padding: 5px;
+      font-size: 20px;
+    }
+
+    .calculate-route p {
+      padding: 2px;
+      padding-left: 15px;
+      margin: 0%;
+      text-align: left;
+      font-size: 15px;
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <h1>🔴🟢Route🚀</h1>
+  </nav>
+  <div class="container">
+    <div class="side-bar"></div>
+    <div class="map">
+      <div id="map-container">
+        {{ map_html | safe }}
+      </div>
+    </div>
+  </div>
+  <div class="bottom-bar">
+    <div class="terminal">
+      <h1>🔎🚌</h1>
+      <p>📍 Calculate Route</p>
+      <p>📍 Get Time of Arrival</p>
+    </div>
+    <div class="distance">
+      <h2><b>Calculate Route</b></h2>
+      <form action="" method="post">
+        <input type="text" name="" id="" placeholder="From?">
+        <input type="text" name="" id="" placeholder="To?">
+        <button type="submit">Calculate</button>
+      </form>
+    </div>
+    <div class="calculate-route">
+      <h2><b>Route Info</b></h2>
+      <p><b>From:</b></p>
+      <p><b>To:</b></p>
+      <p><b>Distance:</b></p>
+      <p><b>Estimated Time:</b></p>
+    </div>
+  </div>
+</body>
+
+</html>
